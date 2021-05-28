@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Wara.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/29 00:46:04 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/29 05:17:19 by tayamamo         ###   ########.fr       */
+/*   Created: 2021/05/29 02:49:07 by tayamamo          #+#    #+#             */
+/*   Updated: 2021/05/29 05:14:35 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
+#ifndef EX00_WARA_HPP_
+#define EX00_WARA_HPP_
+
 #include <iostream>
-#include "Sorcerer.hpp"
+#include <string>
 #include "Victim.hpp"
-#include "Peon.hpp"
-#include "Wara.hpp"
 
-int main() {
-    Sorcerer robert("Robert", "the Magnificent");
+class   Wara : public Victim {
+ public:
+    Wara(void);
+    explicit Wara(std::string name);
+    Wara(Wara const& src);
+    ~Wara(void);
 
-    Victim jim("Jimmy");
-    Peon joe("Joe");
-    Wara test("test");
+    Wara& operator = (Wara const& right);
 
-    std::cout << robert << jim << joe;
+    void    getPolymorphed() const;
 
-    robert.polymorph(jim);
-    jim.getPolymorphed();
-    robert.polymorph(joe);
-    joe.getPolymorphed();
-    robert.polymorph(test);
-    test.getPolymorphed();
-    return (0);
-}
+ private:
+    std::string name;
+};
+
+std::ostream& operator << (std::ostream& ostream, Wara const& right);
+
+#endif  // EX00_WARA_HPP_

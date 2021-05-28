@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   test.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/29 00:46:04 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/29 05:17:19 by tayamamo         ###   ########.fr       */
+/*   Created: 2021/05/29 05:04:02 by tayamamo          #+#    #+#             */
+/*   Updated: 2021/05/29 05:06:17 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Sorcerer.hpp"
-#include "Victim.hpp"
-#include "Peon.hpp"
-#include "Wara.hpp"
+
+class Test1 {
+ public:
+	virtual void func() { std::cout << "Kitty on your lap\n"; }
+	virtual ~Test1() { this->func(); }
+};
+
+class Test2 : public Test1 {
+ public:
+	void func() {
+        std::cout << "Tokyo mew mew\n";
+		Test1::func();
+	}
+};
 
 int main() {
-    Sorcerer robert("Robert", "the Magnificent");
-
-    Victim jim("Jimmy");
-    Peon joe("Joe");
-    Wara test("test");
-
-    std::cout << robert << jim << joe;
-
-    robert.polymorph(jim);
-    jim.getPolymorphed();
-    robert.polymorph(joe);
-    joe.getPolymorphed();
-    robert.polymorph(test);
-    test.getPolymorphed();
-    return (0);
+    Test2* obj = new Test2;;
+    delete(obj);
+    return 0;
 }

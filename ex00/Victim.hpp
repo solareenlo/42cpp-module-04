@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 01:49:46 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/29 03:22:39 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/29 04:53:54 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class   Victim {
     Victim(void);
     explicit Victim(std::string name);
     Victim(Victim const& src);
-    ~Victim(void);
+    virtual ~Victim(void);
 
     Victim& operator = (Victim const& right);
 
