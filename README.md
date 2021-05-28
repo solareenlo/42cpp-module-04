@@ -2,6 +2,7 @@
 
 ### ex00
 - override
+  - [関数のオーバーライド](http://wisdom.sakura.ne.jp/programming/cpp/cpp31.html)
   - [overrideしたいメンバー関数にvirtualを付け忘れるとどうなるか？](https://qiita.com/chihayafuru/items/3b3634f6fde31a3dda12)
   - 継承したメンバ関数の名前を隠蔽して，あらたなメンバ関数を再定義する．
 

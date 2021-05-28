@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 00:46:04 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/29 03:05:15 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/29 03:26:08 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -21,12 +21,11 @@ int main() {
     Victim jim("Jimmy");
     Peon joe("Joe");
 
-    std::cout << std::endl;
-    std::cout << robert << jim;
-    std::cout << std::endl;
+    std::cout << robert << jim << joe;
 
     robert.polymorph(jim);
+    jim.getPolymorphed();
     robert.polymorph(joe);
-    std::cout << std::endl;
+    joe.getPolymorphed();
     return (0);
 }

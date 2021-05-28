@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 01:49:46 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/29 02:21:46 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/29 03:22:39 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class   Victim {
 
     Victim& operator = (Victim const& right);
 
-    std::string getName(void) const;
-    void        getPolymorphed() const;
+    std::string     getName(void) const;
+    virtual void    getPolymorphed() const;
 
  private:
     std::string name_;
