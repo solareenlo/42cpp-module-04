@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Peon.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/29 00:46:04 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/29 03:05:15 by tayamamo         ###   ########.fr       */
+/*   Created: 2021/05/29 02:49:07 by tayamamo          #+#    #+#             */
+/*   Updated: 2021/05/29 03:02:35 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
+#ifndef EX00_PEON_HPP_
+#define EX00_PEON_HPP_
+
 #include <iostream>
-#include "Sorcerer.hpp"
+#include <string>
 #include "Victim.hpp"
-#include "Peon.hpp"
 
-int main() {
-    Sorcerer robert("Robert", "the Magnificent");
+class   Peon : public Victim {
+ public:
+    Peon(void);
+    explicit Peon(std::string name);
+    Peon(Peon const& src);
+    ~Peon(void);
 
-    Victim jim("Jimmy");
-    Peon joe("Joe");
+    Peon& operator = (Peon const& right);
 
-    std::cout << std::endl;
-    std::cout << robert << jim;
-    std::cout << std::endl;
+    void    getPolymorphed() const;
 
-    robert.polymorph(jim);
-    robert.polymorph(joe);
-    std::cout << std::endl;
-    return (0);
-}
+ private:
+    std::string name;
+};
+
+std::ostream& operator << (std::ostream& ostream, Peon const& right);
+
+#endif  // EX00_PEON_HPP_

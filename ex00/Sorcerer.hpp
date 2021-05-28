@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 00:46:39 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/29 01:29:07 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/29 02:44:42 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include "Victim.hpp"
 
 class   Sorcerer {
  public:
@@ -27,6 +28,7 @@ class   Sorcerer {
 
     std::string getName(void) const;
     std::string getTitle(void) const;
+    void        polymorph(Victim const&) const;
 
  private:
     std::string name_;
