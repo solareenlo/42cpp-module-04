@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 18:00:34 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/29 18:28:23 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/29 18:34:21 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ std::string const   Enemy::getType(void) const {
 }
 
 void    Enemy::takeDamage(int damage) {
+    if (damage <= 0)
+        return;
     this->setHP(this->getHP() - damage);
     this->setHP(std::max(this->hp_, 0));
 }
