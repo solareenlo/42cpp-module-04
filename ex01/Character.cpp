@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 02:43:13 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/30 04:37:51 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/30 05:36:38 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -61,7 +61,9 @@ int Character::getRecoverAP(void) const {
 }
 
 void    Character::recoverAP(void) {
-    this->setAP(std::min(this->getMaxAP(), this->getAP() + this->getRecoverAP()));
+    int maxAP = this->getMaxAP();
+    int recoverdAP = this->getAP() + this->getRecoverAP();
+    this->setAP(std::min(maxAP, recoverdAP));
 }
 
 void    Character::equip(AWeapon* weapon) {
@@ -72,9 +74,10 @@ void    Character::attack(Enemy* enemy) {
     if (enemy != NULL && this->getWeapon() != NULL) {
         int nowAP = this->getAP();
         int APcost = this->getWeapon()->getAPCost();
+        std::string weaponName = this->getWeapon()->getName();
         if (nowAP >= APcost) {
             std::cout << this->getName() << " attacks " << enemy->getType();
-            std::cout << " with a " << this->getWeapon()->getName() << std::endl;
+            std::cout << " with a " << weaponName << std::endl;
             this->getWeapon()->attack();
             enemy->takeDamage(this->getWeapon()->getDamage());
             if (enemy->getHP() <= 0)
