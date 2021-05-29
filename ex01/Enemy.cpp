@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 18:00:34 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/29 18:34:21 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/30 02:21:11 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Enemy::Enemy(Enemy const& src) {
 Enemy::~Enemy(void) {
 }
 
-Enemy&  Enemy::operator = (Enemy const& src) {
+Enemy&  Enemy::operator=(Enemy const& src) {
     if (this != &src) {
         this->hp_ = src.getHP();
         this->type_ = src.getType();

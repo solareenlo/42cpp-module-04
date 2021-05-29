@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 09:26:47 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/29 17:55:57 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/30 02:21:58 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class   AWeapon {
     AWeapon(AWeapon const& src);
     virtual ~AWeapon();
 
-    AWeapon&            operator = (AWeapon const& right);
+    AWeapon&            operator=(AWeapon const& right);
 
     std::string const   getName() const;
     int                 getAPCost() const;

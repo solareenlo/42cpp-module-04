@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 23:51:29 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/29 23:55:01 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/30 02:22:24 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class   SuperMutant : public Enemy {
     SuperMutant(SuperMutant const& src);
     ~SuperMutant(void);
 
-    SuperMutant&    operator = (SuperMutant const& right);
+    SuperMutant&    operator=(SuperMutant const& right);
 
     void            takeDamage(int damage);
 };

@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 16:55:49 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/29 17:33:40 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/30 02:21:28 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class   PowerFist : public AWeapon {
     PowerFist(PowerFist const &src);
     ~PowerFist(void);
 
-    PowerFist&  operator = (PowerFist const& right);
+    PowerFist&  operator=(PowerFist const& right);
 
     void        attack() const;
 };

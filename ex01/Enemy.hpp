@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 17:36:37 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/29 18:25:01 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/30 02:21:37 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class   Enemy {
     Enemy(Enemy const& src);
     virtual ~Enemy(void);
 
-    Enemy&              operator = (Enemy const& right);
+    Enemy&              operator=(Enemy const& right);
 
     int                 getHP(void) const;
     std::string const   getType(void) const;

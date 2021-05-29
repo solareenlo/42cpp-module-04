@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 10:48:05 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/29 16:53:04 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/30 02:28:19 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -22,12 +22,8 @@ PlasmaRifle::PlasmaRifle(PlasmaRifle const& src) {
 PlasmaRifle::~PlasmaRifle() {
 }
 
-PlasmaRifle&    PlasmaRifle::operator = (PlasmaRifle const& right) {
-    if (this != &right) {
-        this->setName(right.getName());
-        this->setApcost(right.getAPCost());
-        this->setDamage(right.getDamage());
-    }
+PlasmaRifle&    PlasmaRifle::operator=(PlasmaRifle const& right) {
+    AWeapon::operator=(right);
     return (*this);
 }
 

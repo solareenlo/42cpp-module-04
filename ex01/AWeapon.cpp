@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 10:20:37 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/29 18:29:35 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/30 02:21:20 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ AWeapon::AWeapon(AWeapon const& src) {
 AWeapon::~AWeapon() {
 }
 
-AWeapon& AWeapon::operator = (AWeapon const& right) {
+AWeapon& AWeapon::operator=(AWeapon const& right) {
     if (this != &right) {
         this->setName(right.getName());
         this->setApcost(right.getAPCost());

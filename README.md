@@ -11,11 +11,16 @@
     - 抽象クラスは，公開継承して使うのであれば，is-a 関係を構築する機能のこと．
     - インターフェースとは，純粋仮想関数だけで構築された抽象クラスの特別なバージョンのこと．
     - インターフェースは，can-do 関係と呼ばれる関係性を構築する．
-    - インターフェースは，そこから派生したクラスが「何ができるか」を表現するものです
+    - インターフェースは，そこから派生したクラスが「何ができるか」を表現するもの．
   - [C++ インターフェースの実現方法](https://marycore.jp/prog/cpp/interface-class-and-duck-typing/)
     - [純粋仮想関数](https://marycore.jp/prog/cpp/abstract-class-with-pure-virtual-function/)
     - [virtualデストラクタ](https://marycore.jp/prog/cpp/virtual-destructor/)
   - [なぜ抽象クラス(Abstract)を実装するのか](https://qiita.com/aiko_han/items/e8ddce85188970fd77da)
+  - 抽象クラスの特徴
+    - 抽象クラスを継承したサブクラスは、抽象クラスにある抽象メソッドのオーバーライド必須
+    - サブクラスでコンストラクタを記述しなければならない
+    - 直接インスタンス化できない
+    - 多重継承はできない
 
 ### ex00
 - Override

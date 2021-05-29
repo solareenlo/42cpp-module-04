@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 10:42:04 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/29 10:50:33 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/30 02:22:32 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class   PlasmaRifle : public AWeapon {
     PlasmaRifle(PlasmaRifle const& src);
     ~PlasmaRifle();
 
-    PlasmaRifle&    operator = (PlasmaRifle const& right);
+    PlasmaRifle&    operator=(PlasmaRifle const& right);
 
     void            attack() const;
 };
