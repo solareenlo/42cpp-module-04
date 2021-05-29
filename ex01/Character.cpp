@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 02:43:13 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/30 03:58:27 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/30 04:37:51 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int Character::getRecoverAP(void) const {
 }
 
 void    Character::recoverAP(void) {
-    this->setAP(std::max(this->getMaxAP(), this->getAP() + this->getRecoverAP()));
+    this->setAP(std::min(this->getMaxAP(), this->getAP() + this->getRecoverAP()));
 }
 
 void    Character::equip(AWeapon* weapon) {
