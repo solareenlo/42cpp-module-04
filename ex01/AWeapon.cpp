@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 10:20:37 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/29 10:36:57 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/29 18:29:35 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ AWeapon& AWeapon::operator = (AWeapon const& right) {
     return (*this);
 }
 
-std::string AWeapon::getName(void) const {
+std::string const AWeapon::getName(void) const {
     return (this->name_);
 }
 

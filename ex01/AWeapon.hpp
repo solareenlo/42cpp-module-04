@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 09:26:47 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/29 10:32:10 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/29 17:55:57 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -23,22 +23,22 @@ class   AWeapon {
     AWeapon(AWeapon const& src);
     virtual ~AWeapon();
 
-    AWeapon&        operator = (AWeapon const& right);
+    AWeapon&            operator = (AWeapon const& right);
 
-    std::string     getName() const;
-    int             getAPCost() const;
-    int             getDamage() const;
-    virtual void    attack() const = 0;
+    std::string const   getName() const;
+    int                 getAPCost() const;
+    int                 getDamage() const;
+    virtual void        attack() const = 0;
 
  protected:
-    void            setName(std::string name);
-    void            setApcost(int apcost);
-    void            setDamage(int damage);
+    void                setName(std::string name);
+    void                setApcost(int apcost);
+    void                setDamage(int damage);
 
  private:
-    std::string     name_;
-    int             apcost_;
-    int             damage_;
+    std::string         name_;
+    int                 apcost_;
+    int                 damage_;
 };
 
 #endif  // EX01_AWEAPON_HPP_
