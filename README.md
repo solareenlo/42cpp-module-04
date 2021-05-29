@@ -9,6 +9,29 @@
   - [C++ インターフェースの実現方法](https://marycore.jp/prog/cpp/interface-class-and-duck-typing/)
     - [純粋仮想関数](https://marycore.jp/prog/cpp/abstract-class-with-pure-virtual-function/)
     - [virtualデストラクタ](https://marycore.jp/prog/cpp/virtual-destructor/)
+- [基本クラスを指すポインタは、その派生クラスも指すことができる](http://www.ced.is.utsunomiya-u.ac.jp/lecture/2012/prog/p3/kadai3/virtualfunc2.php)
+    ```c++
+    class Base {
+    public:
+        int m_1;
+        int m_2;
+        int m_3;
+        void function() { ... }
+    };
+    class Derived : public Base {
+    public:
+       int m_4;
+       int m_5;
+       void function() { ... } //Baseのメンバ関数を再定義
+    };
+    ```
+    この時に，Derived クラスのオブジェクトを指すのに，Base クラスを指すポインタを使用しても良いということ．
+    ```c++
+    Base* pb = new Base(); //OK
+    Derived* pd = new Derived(); //当然これもOK
+    Base* pb2 = new Derived();  //そしてこれもOK
+    Derived* pd2 = new Base();  //これは NG!
+    ```
 
 ### ex01
 - Abstract (抽象クラス)
