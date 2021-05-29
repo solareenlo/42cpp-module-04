@@ -4,7 +4,7 @@
 - Interface
 
 ### ex01
-- Abstract, Interface
+- Abstract (抽象クラス)
   - [抽象クラスとインターフェース](https://programming-place.net/ppp/contents/cpp/language/029.html)
     - 抽象クラスとは，純粋仮想関数を含んだクラスのこと．
     - 純粋仮想関数とは，中身のない仮想関数のこと．
