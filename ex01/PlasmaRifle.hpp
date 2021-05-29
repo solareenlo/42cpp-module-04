@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 10:42:04 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/30 02:22:32 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/30 04:04:13 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include "AWeapon.hpp"
 
 class   PlasmaRifle : public AWeapon {
+ public:
     PlasmaRifle(void);
     PlasmaRifle(PlasmaRifle const& src);
     ~PlasmaRifle();

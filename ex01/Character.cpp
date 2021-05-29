@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 02:43:13 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/30 03:23:16 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/30 03:58:27 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -52,8 +52,16 @@ AWeapon*  Character::getWeapon(void) const {
     return (this->weapon_);
 }
 
+int Character::getMaxAP(void) const {
+    return (this->max_ap_);
+}
+
+int Character::getRecoverAP(void) const {
+    return (this->recovery_ap_);
+}
+
 void    Character::recoverAP(void) {
-    this->setAP(std::max(max_ap_, this->getAP() + 10));
+    this->setAP(std::max(this->getMaxAP(), this->getAP() + this->getRecoverAP()));
 }
 
 void    Character::equip(AWeapon* weapon) {
@@ -61,14 +69,18 @@ void    Character::equip(AWeapon* weapon) {
 }
 
 void    Character::attack(Enemy* enemy) {
-    if (enemy != NULL && this->getWeapon() != NULL && this->getAP() >= 10) {
-        std::cout << this->getName() << " attacks " << enemy->getType();
-        std::cout << " with a " << this->getWeapon()->getName() << std::endl;
-        this->getWeapon()->attack();
-        enemy->takeDamage(this->getWeapon()->getDamage());
-        if (enemy->getHP() <= 0)
-            delete enemy;
-        this->setAP(this->getAP() - 10);
+    if (enemy != NULL && this->getWeapon() != NULL) {
+        int nowAP = this->getAP();
+        int APcost = this->getWeapon()->getAPCost();
+        if (nowAP >= APcost) {
+            std::cout << this->getName() << " attacks " << enemy->getType();
+            std::cout << " with a " << this->getWeapon()->getName() << std::endl;
+            this->getWeapon()->attack();
+            enemy->takeDamage(this->getWeapon()->getDamage());
+            if (enemy->getHP() <= 0)
+                delete enemy;
+            this->setAP(nowAP - APcost);
+        }
     }
 }
 

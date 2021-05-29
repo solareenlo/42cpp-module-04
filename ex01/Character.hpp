@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 02:32:01 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/30 03:18:44 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/30 03:34:20 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ class   Character {
     std::string const   getName(void) const;
     int                 getAP(void) const;
     AWeapon*            getWeapon() const;
+    int                 getMaxAP(void) const;
+    int                 getRecoverAP(void) const;
 
     void                recoverAP(void);
     void                equip(AWeapon*);
