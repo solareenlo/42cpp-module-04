@@ -3,8 +3,8 @@
 ### ex02
 - Interface
   - [C++ インターフェースの実現方法](https://marycore.jp/prog/cpp/interface-class-and-duck-typing/)
+    - [純粋仮想関数](https://marycore.jp/prog/cpp/abstract-class-with-pure-virtual-function/)
     - [virtualデストラクタ](https://marycore.jp/prog/cpp/virtual-destructor/)
-    - [C++で抽象クラスを実現する方法【純粋仮想関数】](https://marycore.jp/prog/cpp/abstract-class-with-pure-virtual-function/)
 
 ### ex01
 - Abstract
