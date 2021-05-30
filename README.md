@@ -69,6 +69,13 @@
     ```c++
     Toy **ptr = new Toy *[n];
     ```
+- [new, new[]](https://programming-place.net/ppp/contents/cpp/language/014.html)
+    ```c++
+    new 型名; // デフォルトコンストラクが呼ばれる
+    new 型名(実引数の並び); // 引数ありのコンストラクタが呼ばれる
+    new 型名[要素数]; // 要素数個の動的メモリ割り当てが行われる
+    new 型名*[要素数]; // 要素数個のポインタの動的メモリ割り当てが行われる
+    ```
 
 
 ### ex01
