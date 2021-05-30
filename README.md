@@ -62,6 +62,9 @@
     ```
 - [delete前のNULLチェック](http://ges.blog.shinobi.jp/c--%E5%9F%BA%E7%A4%8E/delete%E5%89%8D%E3%81%AEnull%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF)
   - C++の規格で "if the value of the operand of delete is the null pointer the operation has no effect." となっているので，NULL チェックする必要はない．
+- [deleteとdelete[ ]の違い](https://superactionshootinggame4.hatenablog.com/entry/2018/01/26/135038)
+  - `delete` は配列オブジェクトの先頭要素のデストラクタしか呼ばない．
+  - `delete[]` は配列の全要素のデストラクトを呼ぶ．
 - [Dynamic allocation with DOUBLE POINTERS](https://stackoverflow.com/questions/5721728/dynamic-allocation-with-double-pointers)
     ```c++
     Toy **ptr = new Toy *[n];
