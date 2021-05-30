@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 06:39:31 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/31 00:06:58 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/31 04:55:12 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -119,6 +119,6 @@ void    Squad::reallocateSquad() {
     }
 }
 
-int Squad::getInitSize() {
+int Squad::getInitSize() const {
     return (this->init_size_);
 }
