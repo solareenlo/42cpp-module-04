@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 02:10:24 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/31 02:25:14 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/31 02:31:31 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include "AMateria.hpp"
 
 class   Ice : public AMateria {
+ public:
     Ice();
     Ice(Ice const& src);
     ~Ice();
