@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 04:50:40 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/30 06:38:32 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/30 23:10:52 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class   ISquad {
  public:
     virtual ~ISquad() {}
 
-    virtual int             getCount(void) const = 0;
+    virtual int             getCount() const = 0;
     virtual ISpaceMarine*   getUnit(int) const = 0;
     virtual int             push(ISpaceMarine*) = 0;
 };
