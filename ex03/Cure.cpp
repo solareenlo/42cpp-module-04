@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 02:32:43 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/31 02:38:30 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/31 06:28:14 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ AMateria*   Cure::clone() const {
 }
 
 void    Cure::use(ICharacter const& target) {
-    std::cout << "* heals " << target.getName() << "’s wounds" << std::endl;
+    std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
     AMateria::use(target);
 }

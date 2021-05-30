@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 01:18:09 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/31 02:02:37 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/31 06:08:26 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <string>
 #include "ICharacter.hpp"
+
+class   ICharacter;
 
 class   AMateria {
  public:

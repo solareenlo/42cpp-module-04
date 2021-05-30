@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 02:43:08 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/31 05:22:49 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/31 06:21:17 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ class   Character : public ICharacter {
     AMateria*           inventory_[max_material_];
 
     int                 getMaxMaterial() const;
+    AMateria*           getMaterial(int idx) const;
     void                initInventory_();
 };
 

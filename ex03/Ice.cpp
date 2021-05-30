@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 02:17:16 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/31 02:27:18 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/31 06:11:47 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ AMateria*   Ice::clone() const {
 }
 
 void    Ice::use(ICharacter const& target) {
-    std::cout << "* shoots an ice bolt at " << target.getName() << std::endl;
+    std::cout << "* shoots an ice bolt at " << target.getName();
+    std::cout << " *" << std::endl;
     AMateria::use(target);
 }

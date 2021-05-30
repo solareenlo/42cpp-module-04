@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 02:54:53 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/31 05:24:10 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/31 06:19:35 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -62,8 +62,19 @@ void    Character::unequip(int idx) {
     this->inventory_[idx] = NULL;
 }
 
+void    Character::use(int idx, ICharacter const& target) {
+    if (this->getMaterial(idx) != NULL)
+        this->getMaterial(idx)->use(target);
+}
+
 int Character::getMaxMaterial() const {
     return (this->max_material_);
+}
+
+AMateria*   Character::getMaterial(int idx) const {
+    if (idx < 0 || this->getMaxMaterial() <= idx)
+        return (NULL);
+    return (this->inventory_[idx]);
 }
 
 void    Character::initInventory_() {
