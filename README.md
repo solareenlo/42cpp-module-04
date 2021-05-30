@@ -60,6 +60,9 @@
       a->used = a->size = 0;
     }
     ```
+- [delete前のNULLチェック](http://ges.blog.shinobi.jp/c--%E5%9F%BA%E7%A4%8E/delete%E5%89%8D%E3%81%AEnull%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF)
+  - C++の規格で "if the value of the operand of delete is the null pointer the operation has no effect." となっているので，NULL チェックする必要はない．
+
 
 ### ex01
 - Abstract (抽象クラス)
@@ -73,6 +76,7 @@
     - サブクラスでコンストラクタを記述しなければならない
     - 直接インスタンス化できない
     - 多重継承はできない
+
 
 ### ex00
 - Override
