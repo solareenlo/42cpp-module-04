@@ -2,6 +2,7 @@
 
 ### ex03
 - Abstract と Interface の組合せ．
+- [Meaning of *& and **& in C++](https://stackoverflow.com/questions/5789806/meaning-of-and-in-c)
 
 ### ex02
 - Interface
