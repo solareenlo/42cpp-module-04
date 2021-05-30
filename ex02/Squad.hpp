@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 05:53:15 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/30 20:07:39 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/30 20:31:24 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "ISquad.hpp"
 #include "ISpaceMarine.hpp"
 
-class   Squad {
+class   Squad : public ISquad {
  public:
     Squad(void);
     Squad(Squad const& src);
