@@ -3,6 +3,7 @@
 ### ex02
 - Interface
   - [抽象クラスとインターフェース](https://programming-place.net/ppp/contents/cpp/language/029.html)
+    - interface は `has-a`，abstract は `is-a` の関係．
     - インターフェースとは，純粋仮想関数だけで構築された抽象クラスの特別なバージョンのこと．
     - インターフェースは，can-do 関係と呼ばれる関係性を構築する．
     - インターフェースは，そこから派生したクラスが「何ができるか」を表現するもの．
