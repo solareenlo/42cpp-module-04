@@ -1,5 +1,8 @@
 # 42cpp-module-04
 
+### ex03
+- Abstract と Interface の組合せ．
+
 ### ex02
 - Interface
   - [抽象クラスとインターフェース](https://programming-place.net/ppp/contents/cpp/language/029.html)
