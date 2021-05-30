@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 06:39:31 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/30 23:08:54 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/31 00:06:58 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ void    Squad::reallocateSquad() {
     int size = this->getSize();
     if (count == size) {
         if (size == 0)
-            size = 4;
+            size = this->getInitSize();
         this->setSize(size * 2);
         ISpaceMarine    **newSquad = new ISpaceMarine*[this->getSize()];
         for (int i = 0; i < count; i++)
@@ -117,4 +117,8 @@ void    Squad::reallocateSquad() {
         delete [] this->squad_;
         this->squad_ = newSquad;
     }
+}
+
+int Squad::getInitSize() {
+    return (this->init_size_);
 }

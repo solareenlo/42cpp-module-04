@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 23:19:01 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/30 23:37:18 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/30 23:56:19 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ AssaultTerminator::~AssaultTerminator() {
 
 AssaultTerminator&
 AssaultTerminator::operator=(AssaultTerminator const& right) {
-    (void)right;
+    if (this != &right) {;}
     return (*this);
 }
 

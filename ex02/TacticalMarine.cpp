@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 05:27:16 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/30 22:49:39 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/30 23:56:40 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ TacticalMarine::~TacticalMarine() {
 }
 
 TacticalMarine& TacticalMarine::operator=(TacticalMarine const& right) {
-    (void)right;
+    if (this != &right) {;}
     return (*this);
 }
 
