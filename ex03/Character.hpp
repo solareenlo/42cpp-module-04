@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 02:43:08 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/31 04:00:34 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/31 04:52:15 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ class   Character : public ICharacter {
 
  private:
     std::string         name_;
-    static const int    max_matrial_ = 4;
-    AMateria*           inventory_[max_matrial_];
+    static const int    max_material_ = 4;
+    AMateria*           inventory_[max_material_];
     void                initInventory_();
 };
 

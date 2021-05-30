@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 02:05:42 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/31 02:07:25 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/31 04:35:40 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include "AMateria.hpp"
 
 class   IMateriaSource {
+ public:
     virtual ~IMateriaSource() {}
     virtual void        learnMateria(AMateria*) = 0;
     virtual AMateria*   createMateria(std::string const& type) = 0;

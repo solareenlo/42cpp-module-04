@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 02:54:53 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/31 04:08:50 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/31 04:52:30 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Character::Character(Character const& src) {
 }
 
 Character::~Character() {
-    for (int i = 0; i < this->max_matrial_; i++)
+    for (int i = 0; i < this->max_material_; i++)
         delete this->inventory_[i];
 }
 
@@ -37,7 +37,7 @@ Character&  Character::operator=(Character const& right) {
     if (this != &right) {
         this->name_ = right.getName();
         this->initInventory_();
-        for (int i = 0; i < this->max_matrial_; i++)
+        for (int i = 0; i < this->max_material_; i++)
             this->inventory_[i] = right.inventory_[i]->clone();
     }
     return (*this);
@@ -48,7 +48,7 @@ std::string const&  Character::getName() const {
 }
 
 void    Character::equip(AMateria* m) {
-    for (int i = 0; i < this->max_matrial_; i++) {
+    for (int i = 0; i < this->max_material_; i++) {
         if (this->inventory_[i] == NULL) {
             this->inventory_[i] = m;
             break;
@@ -57,12 +57,12 @@ void    Character::equip(AMateria* m) {
 }
 
 void    Character::unequip(int idx) {
-    if (idx < 0 || this->max_matrial_ <= idx)
+    if (idx < 0 || this->max_material_ <= idx)
         return;
     this->inventory_[idx] = NULL;
 }
 
 void    Character::initInventory_() {
-    for (int i = 0; i < this->max_matrial_; i++)
+    for (int i = 0; i < this->max_material_; i++)
         this->inventory_[i] = NULL;
 }
