@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 05:53:15 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/30 20:31:24 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/30 22:14:20 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -31,11 +31,15 @@ class   Squad : public ISquad {
 
  protected:
     int             getSize(void) const;
+    void            setCount(int count);
+    void            setSize(int size);
+    void            setUnit(ISpaceMarine*);
 
  private:
     ISpaceMarine**  squad_;
     int             count_;
     int             size_;
+    void            reallocateSquad(void);
 };
 
 #endif  // EX02_SQUAD_HPP_

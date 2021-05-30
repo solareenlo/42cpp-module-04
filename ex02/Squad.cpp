@@ -6,13 +6,13 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 06:39:31 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/30 20:15:26 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/30 22:44:16 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
 #include "Squad.hpp"
 
-Squad::Squad(void) : squad_(NULL), count_(0), size_(0) {
+Squad::Squad(void) : squad_(NULL), count_(0), size_(8) {
 }
 
 Squad::Squad(Squad const& src) {
@@ -35,6 +35,8 @@ Squad&  Squad::operator=(Squad const& right) {
         this->count_ = right.getCount();
         this->size_ = right.getSize();
         this->squad_ = new ISpaceMarine*[this->size_];
+        for (int i = 0; i < count_; i++)
+            squad_[i] = right.getUnit(i)->clone();
     }
     return (*this);
 }
@@ -49,6 +51,68 @@ ISpaceMarine*   Squad::getUnit(int i) const {
     return (this->squad_[i]);
 }
 
+int Squad::push(ISpaceMarine* marine) {
+    if (marine == NULL)
+        return (this->getCount());
+
+    int     count = this->getCount();
+    bool    is_exist = false;
+    int     pos;
+    for (pos = 0; pos < count; pos++) {
+        if (this->getUnit(pos) == marine) {
+            is_exist = true;
+            break;
+        }
+    }
+    if (is_exist == false) {
+        this->setUnit(marine);
+    } else {
+        this->reallocateSquad();
+        ISpaceMarine    **newSquad = new ISpaceMarine*[this->getSize()];
+        for (int i = 0; i < pos; i++)
+            newSquad[i] = this->getUnit(i);
+        for (int i = pos + 1; i < this->getCount(); i ++)
+            newSquad[i - 1] = this->getUnit(i);
+        newSquad[this->getCount() - 1] = marine;
+        delete [] this->squad_;
+        this->squad_ = newSquad;
+    }
+
+    return (this->getCount());
+}
+
 int Squad::getSize(void) const {
     return (this->size_);
+}
+
+void    Squad::setCount(int count) {
+    this->count_ = count;
+}
+
+void    Squad::setSize(int size) {
+    this->size_ = size;
+}
+
+void    Squad::setUnit(ISpaceMarine* marine) {
+    if (marine == NULL)
+        return;
+
+    this->reallocateSquad();
+
+    int count = this->getCount();
+    this->squad_[count] = marine;
+    this->setCount(++count);
+}
+
+void    Squad::reallocateSquad(void) {
+    int count = this->getCount();
+    int size = this->getSize();
+    if (count == size) {
+        this->setSize(size * 2);
+        ISpaceMarine    **newSquad = new ISpaceMarine*[this->getSize()];
+        for (int i = 0; i < count; i++)
+            newSquad[i] = this->getUnit(i);
+        delete [] this->squad_;
+        this->squad_ = newSquad;
+    }
 }
