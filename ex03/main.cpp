@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 05:28:49 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/31 14:35:09 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/31 15:15:48 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int main() {
         src->learnMateria(new Ice());
         src->learnMateria(new Cure());
 
-        std::cout << "unknown type: " << src->createMateria("XXX") << std::endl;
+        std::cout << "unknown type: " << src->createMateria("test") << std::endl;
 
         delete src;
         std::cout << std::endl;
@@ -77,9 +77,61 @@ int main() {
         delete a;
         delete b;
         delete enemy;
+        std::cout << std::endl;
+	}
+	{
+        std::cout << "<MATERIA COPY>" << std::endl;
+
+        AMateria    *a = new Cure();
+        AMateria    *b = new Cure();
+
+        Character c("C");
+
+        a->use(c);
+        a->use(c);
+        a->use(c);
+
+        *b = *a;
+
+        std::cout << "original XP: " << a->getXP() << std::endl;
+        std::cout << "  copied XP: " << b->getXP() << std::endl;
+
+        delete a;
+        delete b;
+        std::cout << std::endl;
+	}
+	{
+        std::cout << "<UNCREATEMATERIA()>" << std::endl;
+
+        IMateriaSource  *src = new MateriaSource();
+        src->learnMateria(new Ice());
+
+        std::cout << "Uncreated: " << src->createMateria("cure") << std::endl;
+
+        delete src;
+        std::cout << std::endl;
+	}
+	{
+        std::cout << "<UNEQUIP TEST>" << std::endl;
+
+        Ice         *ice = new Ice();
+        Cure        *cure = new Cure();
+        Character   *a = new Character("A");
+
+        a->equip(ice);
+        a->equip(cure);
+        a->unequip(0);
+
+        std::cout << "(should not print ICE)" << std::endl;
+        a->use(0, *a);
+        a->use(1, *a);
+
+        delete ice;
+        delete a;
+        std::cout << std::endl;
 	}
     {
-        std::cout << "<XP Tests>" << std::endl;
+        std::cout << "<XP TEST>" << std::endl;
 
         ICharacter* me = new Character("me");
         AMateria*   ice = new Ice();
