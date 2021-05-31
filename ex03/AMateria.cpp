@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 01:47:36 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/31 02:02:49 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/31 08:16:38 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ unsigned int    AMateria::getXP() const {
 }
 
 void    AMateria::use(ICharacter const& target) {
+    (void)target;
     this->_setXP(this->getXP() + 10);
 }
 

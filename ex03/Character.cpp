@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 02:54:53 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/31 06:19:35 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/31 14:38:32 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ Character&  Character::operator=(Character const& right) {
         this->name_ = right.getName();
         this->initInventory_();
         for (int i = 0; i < this->getMaxMaterial(); i++)
-            this->inventory_[i] = right.inventory_[i]->clone();
+            if (right.inventory_[i])
+                this->inventory_[i] = right.inventory_[i]->clone();
     }
     return (*this);
 }

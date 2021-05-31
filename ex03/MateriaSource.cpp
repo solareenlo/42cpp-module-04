@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 04:34:47 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/31 05:14:04 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/31 14:43:08 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ MateriaSource&  MateriaSource::operator=(MateriaSource const& right) {
     if (this != &right) {
         this->deleteInventory_();
         for (int i = 0; i < this->getMaxMaterial_(); i++)
-            this->inventory_[i] = right.inventory_[i]->clone();
+            if (right.inventory_[i])
+                this->inventory_[i] = right.inventory_[i]->clone();
     }
     return (*this);
 }
@@ -45,9 +46,8 @@ void    MateriaSource::learnMateria(AMateria* material) {
 
 AMateria*   MateriaSource::createMateria(std::string const& type) {
     for (int i = 0; i < this->getMaxMaterial_(); i++) {
-        if (this->inventory_[i]->getType() == type) {
+        if (this->inventory_[i]  && this->inventory_[i]->getType() == type)
             return (this->inventory_[i]->clone());
-        }
     }
     return (NULL);
 }
