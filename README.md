@@ -3,6 +3,9 @@
 ### ex03
 - Abstract と Interface の組合せ．
 - [Meaning of *& and **& in C++](https://stackoverflow.com/questions/5789806/meaning-of-and-in-c)
+- delete を2回すると double free と同じように heap-use-after-free になるので，
+  - delete を1回にするか，
+  - delete した後に NULL 埋めする．
 
 ### ex02
 - Interface
